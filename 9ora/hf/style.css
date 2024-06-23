@@ -10,10 +10,8 @@ main {
 }
 
 nav, footer {
-    background-color: rgb(37, 37, 37);
-    color: blanchedalmond;
-    margin: 0;
-    padding: 0;
+    margin: 0.5em;
+    padding: 0.5em;
 }
 
 h1 {
@@ -78,4 +76,26 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: blue; /* Example hover background color */
+}
+
+.theme-a {
+    background: blanchedalmond;
+    color: rgb(37, 37, 37);
+}
+@media (prefers-color-scheme: dark) {
+    .theme-a.adaptive {
+        background: rgb(37, 37, 37);
+        color: blanchedalmond;
+    }
+}
+
+.theme-b {
+    background: blanchedalmond;
+    color: rgb(37, 37, 37);
+}
+@media (prefers-color-scheme: light) {
+    .theme-a.adaptive {
+        background: rgb(37, 37, 37);
+        color: blanchedalmond;
+    }
 }
