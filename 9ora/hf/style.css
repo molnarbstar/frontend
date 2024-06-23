@@ -30,6 +30,10 @@ img {
     }
 }
 
+.center {
+    text-align: center;
+}
+
 .highlight {
     color: red; /* Szöveg színe */
 }
