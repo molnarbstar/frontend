@@ -3,6 +3,9 @@ body {
     font-family: 'Courier New', Courier, monospace; /* Betűtípus */
     font-size: 18px;
     line-height: 1.5em; /* Sorköz */
+}
+
+main {
     margin: 1em; /* Bekezdésköz */
 }
 
