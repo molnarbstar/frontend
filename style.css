@@ -1,15 +1,17 @@
-body > p:first-of-type {
+/* Alap stílusok */
+body {
     font-family: 'Courier New', Courier, monospace; /* Betűtípus */
+    font-size: 18px;
     line-height: 1.5em; /* Sorköz */
-    margin: 1em;  /* Bekezdésköz */
-    width: 80vw;
+}
+
+main {
+    margin: 1em; /* Bekezdésköz */
 }
 
 nav, footer {
-   background-color: rgb(37, 37, 37);
-   color: blanchedalmond;
-   margin: 2em;
-   padding: 2em;
+    margin: 0.5em;
+    padding: 0.5em;
 }
 
 h1 {
@@ -17,10 +19,19 @@ h1 {
 }
 
 img {
-    display: block; /* Ensures the image behaves as a block-level element */
-    margin: 0 auto; /* Centers the image horizontally */
-    min-height: 320px;
-    max-height: 640px;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Ensure images are responsive */
+}
+
+@media screen and (max-width: 360px) {
+    img {
+        width: 100%; /* Make images fill the width of the viewport on smaller screens */
+    }
+}
+
+.center {
+    text-align: center;
 }
 
 .highlight {
@@ -38,7 +49,7 @@ a:hover, a:active {
 
 /* Űrlap stílusok */
 form {
-    max-width: 400px; /* Optional: Set a maximum width for the form */
+    max-width: 360px; /* Optional: Set a maximum width for the form */
     margin: 0 auto; /* Optional: Center the form horizontally */
 }
 
@@ -69,4 +80,26 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: blue; /* Example hover background color */
+}
+
+.theme-a {
+    background: blanchedalmond;
+    color: rgb(37, 37, 37);
+}
+@media (prefers-color-scheme: dark) {
+    .theme-a.adaptive {
+        background: rgb(37, 37, 37);
+        color: blanchedalmond;
+    }
+}
+
+.theme-b {
+    background: blanchedalmond;
+    color: rgb(37, 37, 37);
+}
+@media (prefers-color-scheme: light) {
+    .theme-a.adaptive {
+        background: rgb(37, 37, 37);
+        color: blanchedalmond;
+    }
 }
