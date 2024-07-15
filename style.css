@@ -1,15 +1,43 @@
-/* Alap stílusok */
+:root {
+    --background-light: blanchedalmond;
+    --text-light: rgb(37, 37, 37);
+    --background-dark: rgb(37, 37, 37);
+    --text-dark: blanchedalmond;
+    --link-color: blue;
+    --link-hover-color: red;
+    --button-background: rgb(37, 37, 37);
+    --button-text: blanchedalmond;
+    --button-hover-background: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-light: rgb(37, 37, 37);
+        --text-light: blanchedalmond;
+        --background-dark: blanchedalmond;
+        --text-dark: rgb(37, 37, 37);
+        --link-color: lightblue;
+        --link-hover-color: orange;
+        --button-background: blanchedalmond;
+        --button-text: rgb(37, 37, 37);
+        --button-hover-background: lightblue;
+    }
+}
+
 body {
-    font-family: 'Courier New', Courier, monospace; /* Betűtípus */
+    font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
-    line-height: 1.5em; /* Sorköz */
+    line-height: 1.5em;
+    background-color: var(--background-light);
+    color: var(--text-light);
 }
 
 main {
-    margin: 1em; /* Bekezdésköz */
+    margin: 1em;
 }
 
-nav, footer {
+nav,
+footer {
     margin: 0.5em;
     padding: 0.5em;
 }
@@ -21,12 +49,11 @@ h1 {
 img {
     display: block;
     margin: 0 auto;
-    max-width: 100%; /* Ensure images are responsive */
 }
 
 @media screen and (max-width: 360px) {
     img {
-        width: 100%; /* Make images fill the width of the viewport on smaller screens */
+        width: 100%;
     }
 }
 
@@ -35,71 +62,39 @@ img {
 }
 
 .highlight {
-    color: red; /* Szöveg színe */
+    color: red;
 }
 
-a:link, a:visited {
-    color: blue; /* Original color of the link */
-    text-decoration: none; /* Optional: remove underline */
+a:link,
+a:visited {
+    color: var(--link-color);
+    text-decoration: none;
 }
 
-a:hover, a:active {
-    color: red; /* Color when the link is hovered over or clicked */
-}
-
-/* Űrlap stílusok */
-form {
-    max-width: 360px; /* Optional: Set a maximum width for the form */
-    margin: 0 auto; /* Optional: Center the form horizontally */
-}
-
-h2 {
-    text-align: center; /* Center the heading */
-    margin-bottom: 20px; /* Add some space below the heading */
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="number"],
-textarea {
-    width: 100%; /* Make the inputs and textarea full width */
-    padding: 10px; /* Add some padding for better spacing */
-    margin-bottom: 10px; /* Add space between inputs */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-input[type="submit"] {
-    width: 100%; /* Make the submit button full width */
-    padding: 10px; /* Add padding */
-    background-color: rgb(37, 37, 37); /* Example background color */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    cursor: pointer; /* Add pointer cursor on hover */
-}
-
-input[type="submit"]:hover {
-    background-color: blue; /* Example hover background color */
+a:hover,
+a:active {
+    color: var(--link-hover-color);
 }
 
 .theme-a {
-    background: blanchedalmond;
-    color: rgb(37, 37, 37);
-}
-@media (prefers-color-scheme: dark) {
-    .theme-a.adaptive {
-        background: rgb(37, 37, 37);
-        color: blanchedalmond;
-    }
+    background-color: var(--background-light);
+    color: var(--text-light);
 }
 
 .theme-b {
-    background: blanchedalmond;
-    color: rgb(37, 37, 37);
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
-@media (prefers-color-scheme: light) {
-    .theme-a.adaptive {
-        background: rgb(37, 37, 37);
-        color: blanchedalmond;
-    }
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--button-hover-background);
 }
