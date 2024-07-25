@@ -1,16 +1,13 @@
 function readingTime() {
     const text = document.getElementById("article").innerText;
-    console.log(text);
     const wpm = 225;
     const words = text.trim().split(/\s+/).length;
-    console.log(words);
     const time = Math.ceil(words / wpm);
-    console.log(time);
     document.getElementById("reading-time").innerText = time;
 }
 readingTime();
 
-document.getElementById('search-input').addEventListener('input', function() {
+document.getElementById('search-input').addEventListener('input', function () {
     let searchTerm = this.value.toLowerCase();
     let article = document.getElementById('article');
     let paragraphs = article.getElementsByTagName('p');
@@ -23,7 +20,7 @@ document.getElementById('search-input').addEventListener('input', function() {
     // Remove previous highlights
     function removeHighlights() {
         let highlights = article.querySelectorAll('span.highlight-search');
-        highlights.forEach(function(highlight) {
+        highlights.forEach(function (highlight) {
             let parent = highlight.parentNode;
             parent.replaceChild(document.createTextNode(highlight.textContent), highlight);
             parent.normalize(); // Merge adjacent text nodes
