@@ -38,3 +38,26 @@ document.getElementById('search-input').addEventListener('input', function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'GET'
+    })
+        .then(function (response) { return response.json(); })
+        .then(function (json) {
+            const randomNumber = Math.floor(Math.random() * json.length);
+            const author = json[randomNumber];
+
+            console.log(json[randomNumber])
+
+            const authorName = document.getElementById('author_name');
+            const authorEmail = document.getElementById('author_email');
+            const authorPhone = document.getElementById('author_phone');
+            const authorCompany = document.getElementById('author_company');
+
+            authorName.innerText = author.name;
+            authorEmail.innerText = author.email;
+            authorEmail.href = `mailto:${author.email}`;
+            authorPhone.innerText = author.phone;
+            authorCompany.innerText = author.company.name;
+        });
+});
