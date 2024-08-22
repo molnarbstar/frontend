@@ -20,7 +20,7 @@
 </head>
 
 <body class="theme-a adaptive">
-    <nav id="top-of-page" class="theme-b adaptive navbar navbar-expand-md navbar-dark bg-dark">
+    <nav id="top-of-page" class="theme-b adaptive navbar navbar-expand-md navbar-dark bg-dark" aria-label="Main Navigation">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="nav-link" href="#intro">Bevezetés</a></li>
             <li class="nav-item"><a class="nav-link" href="#middle">Tartalom</a></li>
@@ -29,9 +29,10 @@
             <li class="nav-item"><a class="nav-link center" href="#bottom-of-page">Ugrás a lap aljára</a></li>
         </ul>
     </nav>
-    <main class="theme-a adaptive container mt-4" id="article">
+    <main class="theme-a adaptive container mt-4" id="article" aria-label="Article Content">
         <h1>Balázs házi feladata</h1>
-        <input type="text" id="search-input" placeholder="Keresés a cikkben" class="form-control mb-4">
+        <input type="text" id="search-input" placeholder="Keresés a cikkben" class="form-control mb-4"
+            aria-label="Search within the article">
         <p><span id="reading-time"></span> minute read</p>
         <p id="intro">Lorem ipsum dolor sit amet <span class="highlight">consectetur</span> adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -292,7 +293,7 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="name" class="form-label">Név*</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+                    <input type="text" class="form-control" id="name" name="name" required aria-required="true">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="phone" class="form-label">Telefonszám</label>
@@ -302,11 +303,12 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="email" class="form-label">E-mail*</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email" required aria-required="true">
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="age" class="form-label">Kora* (min 18 év)</label>
-                    <input type="number" class="form-control" id="age" name="age" min="18" required>
+                    <input type="number" class="form-control" id="age" name="age" min="18" required
+                        aria-required="true">
                 </div>
             </div>
             <div class="row">
@@ -317,18 +319,18 @@
             </div>
             <div class="row">
                 <div class="col-md-12 mb-3">
-                    <input type="submit" class="btn btn-primary btn-block" value="Küldés">
+                    <input type="submit" class="btn btn-primary btn-block" value="Küldés" aria-label="Submit form">>
                 </div>
             </div>
         </form>
-        <address>
+        <address role="contentinfo">
             <div>A szerző: <span id="author_name"></span></div>
             <div>E-mail: <a href="" id="author_email"></a></div>
             <div>Telefon: <span id="author_phone"></span></div>
             <div>Cégnév: <span id="author_company"></span></div>
         </address>
     </main>
-    <footer class="theme-b adaptive bg-dark text-light text-center py-3" id="bottom-of-page">
+    <footer class="theme-b adaptive bg-dark text-light text-center py-3" id="bottom-of-page" aria-label="Page Footer">
         <p class="mb-0">&copy; 2024 Molnár Balázs</p>
         <div>
             <a href="#top-of-page" class="text-light">Ugrás a lap tetejére</a>
